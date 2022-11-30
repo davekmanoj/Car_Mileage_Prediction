@@ -1,7 +1,6 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import numpy as np
 
 car_mpg = pickle.load(open('car_mpg.pkl','rb'))
 
@@ -11,20 +10,22 @@ col1,col2,col3,col4 = st.columns(4)
 # cylinder=8,displacement=206,horsepower=200,weight=1900,modelyear=70,origin=2
 
 with col1:
-    cd = st.number_input('Cylinder')
+    cd = st.number_input('Cylinder',min_value=0)
 with col2:
-    disp = st.number_input('Displacement')
+    disp = st.number_input('Displacement',min_value=0)
 with col3:
-    hp = st.number_input('Horsepower')
+    hp = st.number_input('Horsepower',min_value=0)
 with col4:
-    wt = st.number_input('weight')
+    wt = st.number_input('weight',min_value=0)
 
 col5,col6 = st.columns(2)
 
 with col5:
-    yr = st.number_input('Model Year')
+    yr = st.number_input('Model Year',min_value=0)
 with col6:
-    org = st.number_input('Origin [choose 1:America 2:Europe 3:Asia]')
+    org = st.number_input('Origin [choose 1:America 2:Europe 3:Asia]',min_value=1,max_value=3)
+
+
 
 if st.button('Predict Mileage'):
     cylinder = cd
