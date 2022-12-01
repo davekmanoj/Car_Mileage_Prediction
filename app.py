@@ -4,7 +4,7 @@ import pandas as pd
 
 car_mpg = pickle.load(open('car_mpg.pkl','rb'))
 
-st.title('Car Mileage Prediction System')
+st.title('Car Mileage Prediction')
 
 col1,col2,col3,col4 = st.columns(4)
 # cylinder=8,displacement=206,horsepower=200,weight=1900,modelyear=70,origin=2
