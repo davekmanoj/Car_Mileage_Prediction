@@ -40,4 +40,4 @@ if st.button('Predict Mileage'):
          'model year': [year], 'origin': [origin]})
     # st.table(df)
     result =car_mpg.predict(df)
-    st.header("Predicted new mileage for above values is "+ str(int(result[0])))
+    st.header("Predicted new mileage for above values is "+ str(int(result[0])) +" miles/liter ")
